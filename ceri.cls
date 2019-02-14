@@ -74,7 +74,7 @@
     	{\color{black}\hrule width \hsize}}
 	\renewcommand\footrule{					% color and thickness of the header rule
     	{\color{black}\hrule width \hsize} \kern 1mm}
-}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -414,12 +414,12 @@ calendar week text={s\myWeek{}}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % names of the specialized tables of content
-\newcommand{\tocName}{Table of contents}									% define TOC header
+\newcommand{\tocName}{Table of Contents}									% define TOC header
 \addto\captionsfrench{\renewcommand{\contentsname}{\tocName}}	% change TOC header
-\newcommand{\lofName}{List of figures}						% define LOF header
+\newcommand{\lofName}{List of Figures}						% define LOF header
 %\renewcommand{\listfigurename}{\lofName}						% change LOF header (1)
 \addto\captionsfrench{\renewcommand{\listfigurename}{\lofName}}	% change LOF header (2)
-\newcommand{\lotName}{List of tables}							% define LOT header
+\newcommand{\lotName}{List of Tables}							% define LOT header
 %\renewcommand{\listtablename}{\lotName}						% change LOT header (1)
 \addto\captionsfrench{\renewcommand{\listtablename}{\lotName}}	% change LOT header (2)
     
@@ -428,11 +428,11 @@ calendar week text={s\myWeek{}}%
 % specialized tables of content
 \newcommand{\MyToc}{
 	\phantomsection
-	%\addcontentsline{toc}{section}{\tocName}	% add the TOC in the TOC (yes! for PDF bookmarks)
+	\addcontentsline{toc}{section}{\tocName}	% add the TOC in the TOC (yes! for PDF bookmarks)
 	\tableofcontents							% insert TOC
 	\thispagestyle{fancy}						% force header/footer
-	\addtocontents{toc}{\protect\thispagestyle{empty}}
-	\pagenumbering{gobble}
+	%\addtocontents{toc}{\protect\thispagestyle{empty}}
+	%\pagenumbering{gobble}
 
 }
 \newcommand{\MyLof}{
@@ -516,6 +516,7 @@ calendar week text={s\myWeek{}}%
 	\else\fi
         
 	% insert ToC
+	\pagenumbering{roman}
 	\MyToc
 	\MyLof
 	\MyLot
